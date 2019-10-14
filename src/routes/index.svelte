@@ -8,9 +8,9 @@
   }
 	.tagline {
 		font-size: 22px;
-		text-transform: uppercase;
 		font-weight: 700;
     letter-spacing: 0.1em;
+    margin: 0;
 	}
 </style>
 
