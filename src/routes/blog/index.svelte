@@ -17,7 +17,7 @@
     max-width: 1080px;
     padding-left: 15px;
     padding-right: 15px;
-    margin: 0 auto
+    margin: 2em auto;
   }
 </style>
 
