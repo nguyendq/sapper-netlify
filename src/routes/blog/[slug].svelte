@@ -28,6 +28,13 @@
 </script>
 
 <style>
+  .container {
+    width: 100%;
+    max-width: 1080px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 2em auto;
+  }
 	/*
 		By default, CSS is locally scoped to the component,
 		and any unused styles are dead-code-eliminated.
@@ -66,9 +73,11 @@
 <svelte:head>
 	<title>{post.title}</title>
 </svelte:head>
-
+<div class="container">
 <h1>{post.title}</h1>
+<i>{post.date}</i>
 
 <div class='content'>
 	{@html post.html}
+</div>
 </div>

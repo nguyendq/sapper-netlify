@@ -1,11 +1,10 @@
 ---
 layout: blog
-title: Test post
+title: JAM STACK là gì? Blog này được build bằng gì?
 date: 2019-10-14T04:32:24.191Z
-feature-image: /uploads/phim-hay-ve-giang-ho.jpg
 description: Test description
 ---
-Just test post hehehehehe
+Bài blog đầu tiên
 
 ```
 <script></script>

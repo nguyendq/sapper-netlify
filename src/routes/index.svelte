@@ -7,11 +7,10 @@
     flex-direction: column
   }
 	.tagline {
-		font-size: 22px;
-		font-weight: 700;
-    letter-spacing: 0.1em;
+		font-size: 24px;
     margin: 0;
-	}
+    font-family: "Karla", Arial, Helvetica, sans-serif;
+  }
 </style>
 
 <script>
@@ -37,5 +36,5 @@
 
 <div class="wrapper">
   <p class="tagline">I build web user interfaces.</p>
-  <a href="mailto: qnguyen.dao@gmail.com">qnguyen.dao@gmail.com</a>
+  <a href="mailto: qnguyen.dao@gmail.com">Say hello!</a>
 </div>
