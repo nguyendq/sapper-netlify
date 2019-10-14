@@ -1,16 +1,31 @@
-import posts from './_posts.js';
+import fm from 'front-matter';
+import glob from 'glob';
+import { fs } from 'mz';
+import path from 'path';
 
-const contents = JSON.stringify(posts.map(post => {
-	return {
-		title: post.title,
-		slug: post.slug
-	};
-}));
+export async function get(reg, res) {
+  const posts = await new Promise((resolve, reject) => {
+    glob('static/_posts/*.md', (err, files) => {
+      if (err) {
+        return reject(err);
+      }
 
-export function get(req, res) {
-	res.writeHead(200, {
-		'Content-Type': 'application/json'
-	});
+      return resolve(files);
+    })
+  });
 
-	res.end(contents);
+  const postsFrontMatter = await Promise.all(
+    posts.map(async post => {
+      const content = (await fs.readFile(post)).toString();
+      return {...fm(content).attributes, slug: path.parse(post).name}
+    })
+  );
+
+  postsFrontMatter.sort((a, b) => (a.date < b.date ? 1 : -1));
+
+  res.writeHead(200, {
+    'Content-Type': 'application/json',
+  });
+
+  res.end(JSON.stringify(postsFrontMatter));
 }
