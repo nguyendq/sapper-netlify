@@ -25,6 +25,7 @@
     ...frontMatter.attributes,
     html: md.render(frontMatter.body)
   };
+  console.log(post);
 </script>
 
 <style>
